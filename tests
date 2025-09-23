@@ -1,0 +1,40 @@
+import unittest
+
+def soma(a, b):
+    return a + b
+
+def subtrai(a, b):
+    return a - b
+
+def multiplica(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Divisão por zero não permitida")
+    return a / b
+
+def eh_par(n):
+    return n % 2 == 0
+
+
+class TestApp(unittest.TestCase):
+
+    def test_soma(self):
+        self.assertEqual(soma(2, 3), 5)
+
+    def test_subtrai(self):
+        self.assertEqual(subtrai(10, 4), 6)
+
+    def test_multiplica(self):
+        self.assertEqual(multiplica(3, 3), 9)
+
+    def test_divide(self):
+        self.assertEqual(divide(10, 2), 5)
+
+    def test_eh_par(self):
+        self.assertTrue(eh_par(8))
+
+
+if __name__ == "__main__":
+    unittest.main()
