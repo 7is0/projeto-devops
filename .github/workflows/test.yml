@@ -26,3 +26,10 @@ jobs:
       - name: Rodar os testes
         run: |
           pytest --maxfail=1 --disable-warnings -q
+
+      - name: Enviar alerta para o Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{"content":"🚨 Testes Unitários finalizados para o Pull Request! Confira o resultado no GitHub."}' \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
