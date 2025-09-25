@@ -1,0 +1,3 @@
+[submodule "projeto-devops"]
+  path = projeto-devops
+  url = https://github.com/AlissonFelipeRibeiro/projeto-devops.git
